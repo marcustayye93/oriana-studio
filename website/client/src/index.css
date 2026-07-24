@@ -1,0 +1,274 @@
+/*
+  ORIANA — Golden-Hour Editorial theme
+  Ground: Ivory Hour #F6F0E6 · Ink: Umber #3B2F26 · Metallic: Honey Gold #C9963F · Accent: Deep Sage (eucalyptus) for cutting the brown monotony
+  Type: Cormorant Garamond (display) / Inter (body, UI, prices) / Petit Formal Script (elegant cursive annotations only).
+  Zero border-radius. Flat depth. No pure white/black.
+*/
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-sand: var(--sand);
+  --color-umber: var(--umber);
+  --color-ivory: var(--ivory);
+  --color-sage: var(--sage);
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0rem;
+  /* Ivory Hour ground */
+  --background: oklch(0.955 0.017 85);
+  --ivory: oklch(0.955 0.017 85);
+  /* Umber ink */
+  --foreground: oklch(0.32 0.026 60);
+  --umber: oklch(0.32 0.026 60);
+  /* Honey Gold accent */
+  --gold: oklch(0.7 0.115 75);
+  /* Deep Sage accent — eucalyptus green, cuts the brown */
+  --sage: oklch(0.52 0.055 155);
+  /* Blush Sand support */
+  --sand: oklch(0.87 0.032 60);
+  --card: oklch(0.955 0.017 85);
+  --card-foreground: oklch(0.32 0.026 60);
+  --popover: oklch(0.965 0.014 85);
+  --popover-foreground: oklch(0.32 0.026 60);
+  --primary: oklch(0.32 0.026 60);
+  --primary-foreground: oklch(0.955 0.017 85);
+  --secondary: oklch(0.87 0.032 60);
+  --secondary-foreground: oklch(0.32 0.026 60);
+  --muted: oklch(0.91 0.024 75);
+  --muted-foreground: oklch(0.52 0.028 60);
+  --accent: oklch(0.7 0.115 75);
+  --accent-foreground: oklch(0.955 0.017 85);
+  --destructive: oklch(0.55 0.18 28);
+  --destructive-foreground: oklch(0.955 0.017 85);
+  --border: oklch(0.32 0.026 60 / 18%);
+  --input: oklch(0.32 0.026 60 / 25%);
+  --ring: oklch(0.7 0.115 75);
+  --sidebar: oklch(0.955 0.017 85);
+  --sidebar-foreground: oklch(0.32 0.026 60);
+  --sidebar-primary: oklch(0.32 0.026 60);
+  --sidebar-primary-foreground: oklch(0.955 0.017 85);
+  --sidebar-accent: oklch(0.87 0.032 60);
+  --sidebar-accent-foreground: oklch(0.32 0.026 60);
+  --sidebar-border: oklch(0.32 0.026 60 / 18%);
+  --sidebar-ring: oklch(0.7 0.115 75);
+  --chart-1: oklch(0.7 0.115 75);
+  --chart-2: oklch(0.87 0.032 60);
+  --chart-3: oklch(0.52 0.028 60);
+  --chart-4: oklch(0.32 0.026 60);
+  --chart-5: oklch(0.91 0.024 75);
+  --ease-out-quiet: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+  ::selection {
+    background: oklch(0.7 0.115 75 / 30%);
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      max-width: 1160px;
+    }
+  }
+
+  /* Serif display */
+  .font-display {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  /* Wordmark */
+  .wordmark {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* Eyebrow label */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+
+  /* Gold rule line */
+  .gold-rule {
+    height: 1px;
+    background: var(--gold);
+    width: 3rem;
+  }
+
+  /* Handwriting annotation layer — Chesa's margin notes */
+  .hand {
+    font-family: "Petit Formal Script", cursive;
+    font-weight: 400;
+    letter-spacing: 0.015em;
+    line-height: 1.7;
+  }
+
+  /* Oversized display type for visual-first statements */
+  .mega {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+  }
+
+  /* Marquee strip of Chesa's phrases */
+  @keyframes marquee-x {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-x 38s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+
+  /* Slow ken-burns for full-bleed imagery */
+  @keyframes slow-scale {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.06);
+    }
+  }
+  .kenburns {
+    animation: slow-scale 16s ease-out forwards;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .kenburns {
+      animation: none;
+    }
+  }
+
+  /* Underline-grow link hover */
+  .link-grow {
+    position: relative;
+    text-decoration: none;
+  }
+  .link-grow::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 0;
+    background: currentColor;
+    transition: width 240ms var(--ease-out-quiet);
+  }
+  .link-grow:hover::after,
+  .link-grow[data-active="true"]::after {
+    width: 100%;
+  }
+
+  /* Buttons press feedback */
+  .press:active {
+    transform: scale(0.97);
+    transition: transform 140ms var(--ease-out-quiet);
+  }
+}
+
+/* Slow fade-and-rise entrances */
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 600ms var(--ease-out-quiet),
+      transform 600ms var(--ease-out-quiet);
+  }
+  .rise.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

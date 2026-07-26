@@ -6,7 +6,7 @@
 */
 import { Link } from "wouter";
 import { useReveal } from "@/hooks/useReveal";
-import { IMG, SERVICES, VOICE, WA_DEFAULT } from "@/lib/site";
+import { IMG, LOCATION, SERVICES, VOICE, WA_DEFAULT } from "@/lib/site";
 
 const MARQUEE = [
   "not too much",
@@ -42,15 +42,15 @@ export default function Home() {
           <div className="rise mt-8 flex flex-wrap items-end justify-between gap-8">
             <p className="max-w-sm text-base leading-relaxed text-white/90 md:text-lg">
               Natural-first lash extensions and lifts. One client at a time, by
-              appointment, in Serangoon.
+              appointment, in Woodlands.
             </p>
             <a
               href={WA_DEFAULT}
               target="_blank"
               rel="noopener noreferrer"
-              className="press bg-white px-9 py-4 text-xs font-medium uppercase tracking-[0.16em] text-[oklch(0.24_0.02_60)] transition-colors hover:bg-[oklch(0.92_0.03_85)]"
+              className="btn-pill bg-white text-[oklch(0.24_0.02_60)] hover:bg-[oklch(0.92_0.03_85)]"
             >
-              Hold your hour
+              Hold your hour <span className="btn-arrow">→</span>
             </a>
           </div>
         </div>
@@ -164,29 +164,41 @@ export default function Home() {
               <li key={s.name} className="rise">
                 <Link
                   href="/services"
-                  className="group grid gap-2 py-8 transition-colors sm:grid-cols-12 sm:items-baseline"
+                  className="group flex items-center gap-5 py-6 transition-colors sm:gap-8"
                 >
-                  <span className="font-display text-lg italic text-[oklch(0.62_0.11_75)] sm:col-span-1">
-                    {String(i + 1).padStart(2, "0")}
+                  <div className="h-20 w-24 shrink-0 overflow-hidden rounded-xl sm:h-24 sm:w-32">
+                    <img
+                      src={s.photo}
+                      alt={s.photoAlt}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="grid min-w-0 flex-1 gap-1 sm:grid-cols-11 sm:items-baseline sm:gap-2">
+                    <span className="font-display hidden text-lg italic text-[oklch(0.62_0.11_75)] sm:col-span-1 sm:block">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="font-display text-2xl transition-all duration-200 group-hover:translate-x-1 group-hover:text-[var(--sage)] sm:col-span-5 md:text-4xl">
+                      {s.name}
+                    </h3>
+                    <p className="text-xs text-muted-foreground sm:col-span-3 sm:text-sm">
+                      {s.descriptor}
+                    </p>
+                    <p className="text-sm font-medium tracking-wide sm:col-span-2 sm:text-right">
+                      {s.price}
+                    </p>
+                  </div>
+                  <span className="btn-arrow hidden text-[var(--sage)] sm:inline-block">
+                    →
                   </span>
-                  <h3 className="font-display text-3xl transition-all duration-200 group-hover:translate-x-2 group-hover:text-[var(--sage)] sm:col-span-6 md:text-4xl">
-                    {s.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground sm:col-span-3">
-                    {s.descriptor}
-                  </p>
-                  <p className="text-sm font-medium tracking-wide sm:col-span-2 sm:text-right">
-                    {s.price}
-                  </p>
                 </Link>
               </li>
             ))}
           </ul>
           <Link
             href="/services"
-            className="link-grow rise mt-10 inline-block text-sm tracking-wide text-[var(--sage)]"
+            className="btn-pill-outline rise mt-10 text-[var(--sage)] hover:bg-[var(--sage)] hover:text-white"
           >
-            Full menu — details, materials, durations
+            See the full menu <span className="btn-arrow">→</span>
           </Link>
         </div>
       </section>
@@ -222,9 +234,9 @@ export default function Home() {
             </p>
             <Link
               href="/studio"
-              className="link-grow rise mt-10 inline-block text-sm tracking-wide text-primary-foreground"
+              className="btn-pill-outline rise mt-10 text-primary-foreground hover:bg-primary-foreground hover:text-primary"
             >
-              Meet Chesa &amp; the studio
+              Meet Chesa &amp; the studio <span className="btn-arrow">→</span>
             </Link>
           </div>
         </div>
@@ -266,7 +278,8 @@ export default function Home() {
         </div>
         <p className="rise mx-auto mt-12 max-w-md text-center text-sm leading-relaxed text-muted-foreground">
           A private home studio: tea first, then your hour. Most clients fall
-          asleep. Wubbles stays in the lounge — or elsewhere, if you ask.
+          asleep. Wubbles stays in the lounge — or elsewhere, if you ask.{" "}
+          {LOCATION.block}, near Woodlands South MRT.
         </p>
       </section>
 
@@ -289,9 +302,9 @@ export default function Home() {
             href={WA_DEFAULT}
             target="_blank"
             rel="noopener noreferrer"
-            className="press rise mt-10 inline-block bg-white px-10 py-4 text-xs font-medium uppercase tracking-[0.16em] text-[oklch(0.24_0.02_60)] transition-colors hover:bg-[oklch(0.92_0.03_85)]"
+            className="btn-pill rise mt-10 bg-white text-[oklch(0.24_0.02_60)] hover:bg-[oklch(0.92_0.03_85)]"
           >
-            Hold your hour on WhatsApp
+            Hold your hour on WhatsApp <span className="btn-arrow">→</span>
           </a>
         </div>
       </section>

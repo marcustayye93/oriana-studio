@@ -1,7 +1,7 @@
 /* ORIANA STUDIO layout — v2.0. Italiana wordmark lockup (ORIANA / STUDIO). Header is white over the dark hero at top of page, switches to the solid bar once scrolling. Umber footer with inclusive tagline. */
 import { Link, useLocation } from "wouter";
 import { useEffect, useState } from "react";
-import { NAV_LINKS, WA_DEFAULT, IMG } from "@/lib/site";
+import { NAV_LINKS, WA_DEFAULT, IMG, LOCATION } from "@/lib/site";
 
 function Wordmark({ light = false }: { light?: boolean }) {
   return (
@@ -80,9 +80,9 @@ export function Header() {
             href={WA_DEFAULT}
             target="_blank"
             rel="noopener noreferrer"
-            className={`press px-6 py-3 text-xs font-medium tracking-[0.14em] uppercase transition-colors duration-300 ${solid ? "bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)]" : "bg-white/95 text-[oklch(0.24_0.02_60)] hover:bg-white"}`}
+            className={`btn-pill !px-6 !py-3 ${solid ? "bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)]" : "bg-white/95 text-[oklch(0.24_0.02_60)] hover:bg-white"}`}
           >
-            Hold your hour
+            Hold your hour <span className="btn-arrow">→</span>
           </a>
         </nav>
 
@@ -118,9 +118,9 @@ export function Header() {
             href={WA_DEFAULT}
             target="_blank"
             rel="noopener noreferrer"
-            className="press mt-2 bg-primary text-primary-foreground px-6 py-4 text-center text-xs font-medium tracking-[0.14em] uppercase"
+            className="btn-pill mt-2 justify-center bg-primary text-primary-foreground"
           >
-            Hold your hour
+            Hold your hour <span className="btn-arrow">→</span>
           </a>
         </nav>
       )}
@@ -159,7 +159,8 @@ export function Footer() {
             <p className="eyebrow text-primary-foreground/50">Visit</p>
             <ul className="mt-5 space-y-3 text-sm text-primary-foreground/80">
               <li>By appointment only</li>
-              <li>Serangoon, Singapore</li>
+              <li>{LOCATION.short}</li>
+              <li>Near Woodlands South MRT · Block 587</li>
               <li>Resident greeter: Wubbles the Cavapoo</li>
               <li>
                 <a

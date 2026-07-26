@@ -15,9 +15,9 @@ export default function NotFound() {
       </p>
       <Link
         href="/"
-        className="press mt-10 inline-block bg-primary px-10 py-4 text-xs font-medium uppercase tracking-[0.16em] text-primary-foreground transition-colors hover:bg-[oklch(0.26_0.024_60)]"
+        className="btn-pill mt-10 bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)]"
       >
-        Back to the studio
+        Back to the studio <span className="btn-arrow">→</span>
       </Link>
     </div>
   );

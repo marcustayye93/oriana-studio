@@ -4,12 +4,12 @@
   Round 3: sage accent for interactive/labels, Petit Formal Script sizing, witty-classy copy.
 */
 import { useReveal } from "@/hooks/useReveal";
-import { waLink, WA_DEFAULT } from "@/lib/site";
+import { IMG, LOCATION, waLink, WA_DEFAULT } from "@/lib/site";
 
 const FAQS = [
   {
     q: "Where exactly is the studio?",
-    a: "Serangoon, a short walk from the MRT. The full address is shared on WhatsApp once your appointment is confirmed.",
+    a: "Block 587, Woodlands — a short walk from Woodlands South MRT, through the garden and past the tennis court. The full unit address is shared on WhatsApp once your appointment is confirmed.",
   },
   {
     q: "How far ahead should I book?",
@@ -58,9 +58,9 @@ export default function Contact() {
               href={WA_DEFAULT}
               target="_blank"
               rel="noopener noreferrer"
-              className="press rise mt-10 inline-block bg-primary px-10 py-4 text-xs font-medium uppercase tracking-[0.16em] text-primary-foreground transition-colors hover:bg-[oklch(0.26_0.024_60)]"
+              className="btn-pill rise mt-10 bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)]"
             >
-              Message on WhatsApp
+              Message on WhatsApp <span className="btn-arrow">→</span>
             </a>
             <p className="rise mt-6 text-xs tracking-wide text-muted-foreground">
               Or follow the work first:{" "}
@@ -76,6 +76,13 @@ export default function Contact() {
           </div>
 
           <div className="md:col-span-5 md:col-start-8">
+            <div className="rise mb-6 aspect-[16/7] w-full overflow-hidden rounded-xl">
+              <img
+                src={IMG.studioLight}
+                alt="The room your hour happens in — linen bed, warm window light"
+                className="h-full w-full object-cover"
+              />
+            </div>
             <div className="rise border border-border p-8 md:p-10">
               <p className="eyebrow text-muted-foreground">How it works</p>
               <ol className="mt-6 space-y-6">
@@ -105,7 +112,7 @@ export default function Contact() {
               </ol>
               <div className="mt-8 border-t border-border pt-6 text-sm leading-relaxed text-muted-foreground">
                 <p>By appointment only · Tue–Sat</p>
-                <p className="mt-1">Serangoon, Singapore</p>
+                <p className="mt-1">{LOCATION.short} · near Woodlands South MRT</p>
               </div>
             </div>
           </div>
@@ -150,9 +157,9 @@ export default function Contact() {
           href={waLink("Hello Oriana — I'd like to hold an hour. My name is ")}
           target="_blank"
           rel="noopener noreferrer"
-          className="press rise mt-10 inline-block bg-primary px-10 py-4 text-xs font-medium uppercase tracking-[0.16em] text-primary-foreground transition-colors hover:bg-[oklch(0.26_0.024_60)]"
+          className="btn-pill rise mt-10 bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)]"
         >
-          Hold your hour
+          Hold your hour <span className="btn-arrow">→</span>
         </a>
       </section>
     </div>

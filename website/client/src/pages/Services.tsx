@@ -56,12 +56,19 @@ export default function Services() {
               key={s.name}
               className="rise grid gap-6 py-12 md:grid-cols-12 md:py-16"
             >
-              <div className="md:col-span-1">
+              <div className="md:col-span-3">
                 <span className="font-display text-lg italic text-[oklch(0.62_0.11_75)]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
+                <div className="mt-4 aspect-[4/3] w-full max-w-[280px] overflow-hidden rounded-xl">
+                  <img
+                    src={s.photo}
+                    alt={s.photoAlt}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
               </div>
-              <div className="md:col-span-5">
+              <div className="md:col-span-3">
                 <h2 className="font-display text-3xl md:text-4xl">{s.name}</h2>
                 <p className="eyebrow mt-3 text-muted-foreground">
                   {s.descriptor}
@@ -96,7 +103,7 @@ export default function Services() {
                   </AccordionItem>
                 </Accordion>
               </div>
-              <div className="flex flex-row items-baseline gap-6 md:col-span-2 md:flex-col md:items-end md:gap-2 md:text-right">
+              <div className="flex flex-row flex-wrap items-center gap-6 md:col-span-2 md:flex-col md:items-end md:gap-2 md:text-right">
                 <p className="text-base font-medium tracking-wide">{s.price}</p>
                 <p className="text-xs text-muted-foreground">{s.duration}</p>
                 <a
@@ -105,9 +112,9 @@ export default function Services() {
                   )}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="link-grow mt-0 text-xs uppercase tracking-[0.14em] md:mt-4"
+                  className="btn-pill mt-0 bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)] md:mt-4"
                 >
-                  Book this
+                  Book this <span className="btn-arrow">→</span>
                 </a>
               </div>
             </article>
@@ -156,9 +163,9 @@ export default function Services() {
             </div>
             <Link
               href="/aftercare"
-              className="link-grow rise mt-8 inline-block text-sm tracking-wide"
+              className="btn-pill-outline rise mt-8 text-foreground hover:bg-primary hover:text-primary-foreground"
             >
-              Read Keep the Light
+              Read Keep the Light <span className="btn-arrow">→</span>
             </Link>
           </div>
         </div>

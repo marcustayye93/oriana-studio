@@ -34,7 +34,20 @@ export const IMG = {
   portraitF: "/manus-storage/oriana-v2-portrait-female_f7b0fe36.png",
   portraitM: "/manus-storage/oriana-v2-portrait-male_2872847a.png",
   studioLight: "/manus-storage/oriana-v2-studio-light_6d0c9657.png",
+  // Round-6 service result photos — one per menu item
+  svcClassic: "/manus-storage/oriana-v2-service-classic_16012626.png",
+  svcVolume: "/manus-storage/oriana-v2-service-volume_29717c64.png",
+  svcLift: "/manus-storage/oriana-v2-service-lift_f2e9ddee.png",
+  svcInfill: "/manus-storage/oriana-v2-service-infill_1a8f150d.png",
 };
+
+/* Location — Woodlands South. Short form for footers/cards, long form for directions. */
+export const LOCATION = {
+  short: "Woodlands South, Singapore",
+  block: "Block 587, Woodlands",
+  directions:
+    "From Woodlands South MRT it's a short walk — through the garden, past the tennis court, and up to Block 587.",
+} as const;
 
 /* Chesa's own words — the voice bank. Use verbatim or lightly shaped. */
 export const VOICE = {
@@ -59,6 +72,8 @@ export const SERVICES = [
     duration: "2 hrs",
     price: "S$128",
     note: "Includes consultation & mapping",
+    photo: "/manus-storage/oriana-v2-service-classic_16012626.png",
+    photoAlt: "Result of First Light — a natural classic lash set, eyes open",
     anatomy: {
       applied:
         "Single classic extensions — one extension per natural lash, never clusters. Around 80–120 per eye depending on what you grew yourself.",
@@ -79,6 +94,8 @@ export const SERVICES = [
     duration: "2.5 hrs",
     price: "S$168",
     note: "Recommended after a First Light consultation",
+    photo: "/manus-storage/oriana-v2-service-volume_29717c64.png",
+    photoAlt: "Result of Full Gold — a fuller, darker volume lash set",
     anatomy: {
       applied:
         "Hand-crafted volume fans — 3 to 5 ultra-fine extensions fanned per natural lash, made on the spot, not pre-glued from a packet.",
@@ -99,6 +116,8 @@ export const SERVICES = [
     duration: "1 hr",
     price: "S$88",
     note: "Best first visit if you're unsure about extensions",
+    photo: "/manus-storage/oriana-v2-service-lift_f2e9ddee.png",
+    photoAlt: "Result of The Lift — natural lashes curled and tinted, no extensions",
     anatomy: {
       applied:
         "A keratin lift — your natural lashes set over a silicone shield at the root — followed by a tint several shades deeper than your own.",
@@ -119,6 +138,8 @@ export const SERVICES = [
     duration: "1.5 hrs",
     price: "from S$78",
     note: "Within 3 weeks of your last set",
+    photo: "/manus-storage/oriana-v2-service-infill_1a8f150d.png",
+    photoAlt: "Result of The Return — an infilled set restored to day one",
     anatomy: {
       applied:
         "Outgrown extensions removed, new ones placed on the lashes that have grown in since. Typically 40–60% of the set refreshed.",

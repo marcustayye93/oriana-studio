@@ -4,7 +4,7 @@
   Round 3: Petit Formal Script .hand (smaller sizes), sage accent, witty/classy copy.
 */
 import { useReveal } from "@/hooks/useReveal";
-import { IMG, VOICE, WA_DEFAULT, waLink } from "@/lib/site";
+import { IMG, LOCATION, VOICE, WA_DEFAULT, waLink } from "@/lib/site";
 
 export default function Studio() {
   const ref = useReveal();
@@ -130,9 +130,9 @@ export default function Studio() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="link-grow rise mt-8 inline-block text-sm tracking-wide text-[var(--sage)]"
+              className="btn-pill-outline rise mt-8 text-[var(--sage)] hover:bg-[var(--sage)] hover:text-white"
             >
-              Book a visit — Wubbles included
+              Book a visit — Wubbles included <span className="btn-arrow">→</span>
             </a>
           </div>
           <div className="order-1 md:order-2 md:col-span-6 md:col-start-7">
@@ -162,7 +162,7 @@ export default function Studio() {
               },
               {
                 t: "Getting here",
-                d: "Serangoon, a short walk from the MRT. Door directions come with your booking.",
+                d: LOCATION.directions,
               },
             ].map((c) => (
               <div key={c.t} className="rise border-t border-border pt-8">
@@ -178,9 +178,9 @@ export default function Studio() {
               href={WA_DEFAULT}
               target="_blank"
               rel="noopener noreferrer"
-              className="press inline-block bg-primary px-10 py-4 text-xs font-medium uppercase tracking-[0.16em] text-primary-foreground transition-colors hover:bg-[oklch(0.26_0.024_60)]"
+              className="btn-pill bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)]"
             >
-              Hold your hour
+              Hold your hour <span className="btn-arrow">→</span>
             </a>
           </div>
         </div>

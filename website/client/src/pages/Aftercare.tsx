@@ -26,6 +26,13 @@ export default function Aftercare() {
 
       {/* Morning / Evening rites */}
       <section className="container pb-24 md:pb-36">
+        <div className="rise mx-auto mb-6 aspect-[16/6] w-full max-w-4xl overflow-hidden rounded-xl">
+          <img
+            src={IMG.macro}
+            alt="What a kept set looks like — clean, brushed lash extensions up close"
+            className="h-full w-full object-cover object-center"
+          />
+        </div>
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rise border border-border p-10 md:p-14">
             <p className="font-display text-lg italic text-[oklch(0.62_0.11_75)]">
@@ -119,9 +126,9 @@ export default function Aftercare() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="press rise mt-10 inline-block bg-primary px-8 py-4 text-xs font-medium uppercase tracking-[0.16em] text-primary-foreground transition-colors hover:bg-[oklch(0.26_0.024_60)]"
+              className="btn-pill rise mt-10 bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)]"
             >
-              Book your Return
+              Book your Return <span className="btn-arrow">→</span>
             </a>
           </div>
         </div>

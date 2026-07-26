@@ -1,8 +1,9 @@
 /*
-  ORIANA — Golden-Hour Editorial theme
-  Ground: Ivory Hour #F6F0E6 · Ink: Umber #3B2F26 · Metallic: Honey Gold #C9963F · Accent: Deep Sage (eucalyptus) for cutting the brown monotony
-  Type: Cormorant Garamond (display) / Inter (body, UI, prices) / Petit Formal Script (elegant cursive annotations only).
-  Zero border-radius. Flat depth. No pure white/black.
+  ORIANA STUDIO — v2.0 "Gradient-Grain" identity (Round 4)
+  Ground: Cream Hour #FAF4EA (brighter) · Ink: Umber #3B2F26 · Gold #C9963F · Eucalyptus #7E9C7B · Coral #E8785A (max one coral moment per surface)
+  Gradient-grain: peach→pink→gold→green→blue washes, ALWAYS grained (SVG turbulence), green always present in the blend.
+  Type: Cormorant Garamond LIGHT 300 (display) / Italiana (wordmark only) / Inter (body, UI, prices) / Petit Formal Script (Chesa's hand only).
+  Zero border-radius. Hairline borders. No pure white/black. Gradients never sit behind body copy.
 */
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -38,45 +39,48 @@
   --color-umber: var(--umber);
   --color-ivory: var(--ivory);
   --color-sage: var(--sage);
+  --color-coral: var(--coral);
   --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
 :root {
   --radius: 0rem;
-  /* Ivory Hour ground */
-  --background: oklch(0.955 0.017 85);
-  --ivory: oklch(0.955 0.017 85);
+  /* Cream Hour ground — brighter than round 3 */
+  --background: oklch(0.966 0.018 88);
+  --ivory: oklch(0.966 0.018 88);
   /* Umber ink */
   --foreground: oklch(0.32 0.026 60);
   --umber: oklch(0.32 0.026 60);
   /* Honey Gold accent */
   --gold: oklch(0.7 0.115 75);
-  /* Deep Sage accent — eucalyptus green, cuts the brown */
-  --sage: oklch(0.52 0.055 155);
+  /* Eucalyptus green — the brand's grounding accent, present in every gradient */
+  --sage: oklch(0.62 0.055 150);
+  /* Coral — the single warm exclamation; max one moment per surface */
+  --coral: oklch(0.7 0.14 35);
   /* Blush Sand support */
   --sand: oklch(0.87 0.032 60);
-  --card: oklch(0.955 0.017 85);
+  --card: oklch(0.966 0.018 88);
   --card-foreground: oklch(0.32 0.026 60);
-  --popover: oklch(0.965 0.014 85);
+  --popover: oklch(0.972 0.015 88);
   --popover-foreground: oklch(0.32 0.026 60);
   --primary: oklch(0.32 0.026 60);
-  --primary-foreground: oklch(0.955 0.017 85);
+  --primary-foreground: oklch(0.966 0.018 88);
   --secondary: oklch(0.87 0.032 60);
   --secondary-foreground: oklch(0.32 0.026 60);
   --muted: oklch(0.91 0.024 75);
   --muted-foreground: oklch(0.52 0.028 60);
   --accent: oklch(0.7 0.115 75);
-  --accent-foreground: oklch(0.955 0.017 85);
+  --accent-foreground: oklch(0.966 0.018 88);
   --destructive: oklch(0.55 0.18 28);
-  --destructive-foreground: oklch(0.955 0.017 85);
+  --destructive-foreground: oklch(0.966 0.018 88);
   --border: oklch(0.32 0.026 60 / 18%);
   --input: oklch(0.32 0.026 60 / 25%);
   --ring: oklch(0.7 0.115 75);
-  --sidebar: oklch(0.955 0.017 85);
+  --sidebar: oklch(0.966 0.018 88);
   --sidebar-foreground: oklch(0.32 0.026 60);
   --sidebar-primary: oklch(0.32 0.026 60);
-  --sidebar-primary-foreground: oklch(0.955 0.017 85);
+  --sidebar-primary-foreground: oklch(0.966 0.018 88);
   --sidebar-accent: oklch(0.87 0.032 60);
   --sidebar-accent-foreground: oklch(0.32 0.026 60);
   --sidebar-border: oklch(0.32 0.026 60 / 18%);
@@ -87,6 +91,12 @@
   --chart-4: oklch(0.32 0.026 60);
   --chart-5: oklch(0.91 0.024 75);
   --ease-out-quiet: cubic-bezier(0.23, 1, 0.32, 1);
+  /* Gradient-grain stops (v2.0) */
+  --grad-peach: #f6c9a8;
+  --grad-pink: #efb7b0;
+  --grad-gold: #ebce8f;
+  --grad-green: #b7c9ac;
+  --grad-blue: #c3d3dc;
 }
 
 @layer base {
@@ -149,15 +159,15 @@
   /* Serif display */
   .font-display {
     font-family: var(--font-serif);
-    font-weight: 500;
+    font-weight: 400;
     letter-spacing: 0.01em;
   }
 
-  /* Wordmark */
+  /* Wordmark — Italiana, wide-tracked (v2.0 lockup) */
   .wordmark {
-    font-family: var(--font-serif);
-    font-weight: 600;
-    letter-spacing: 0.18em;
+    font-family: "Italiana", var(--font-serif);
+    font-weight: 400;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
   }
 
@@ -188,9 +198,51 @@
   /* Oversized display type for visual-first statements */
   .mega {
     font-family: "Cormorant Garamond", serif;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 0.95;
     letter-spacing: -0.01em;
+  }
+
+  /* ——— v2.0 gradient-grain surfaces ———
+     Rules: always grained, green always in the blend, never behind body copy. */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.55;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+  .grad-dawn {
+    position: relative;
+    background: linear-gradient(
+      118deg,
+      var(--grad-peach) 0%,
+      var(--grad-pink) 28%,
+      var(--grad-gold) 55%,
+      var(--grad-green) 82%,
+      var(--grad-blue) 100%
+    );
+  }
+  .grad-dusk {
+    position: relative;
+    background: linear-gradient(
+      160deg,
+      var(--grad-green) 0%,
+      var(--grad-gold) 40%,
+      var(--grad-peach) 75%,
+      var(--grad-pink) 100%
+    );
+  }
+  .grad-veil {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--grad-peach) 45%, var(--ivory)) 0%,
+      color-mix(in oklch, var(--grad-gold) 40%, var(--ivory)) 45%,
+      color-mix(in oklch, var(--grad-green) 45%, var(--ivory)) 100%
+    );
   }
 
   /* Marquee strip of Chesa's phrases */

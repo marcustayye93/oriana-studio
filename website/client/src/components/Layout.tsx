@@ -1,4 +1,4 @@
-/* ORIANA layout — quiet top bar (wordmark left, links + WhatsApp CTA right), umber footer with gold glyph. */
+/* ORIANA STUDIO layout — v2.0. Italiana wordmark lockup (ORIANA / STUDIO), quiet top bar, umber footer with inclusive tagline. */
 import { Link, useLocation } from "wouter";
 import { useEffect, useState } from "react";
 import { NAV_LINKS, WA_DEFAULT, IMG } from "@/lib/site";
@@ -7,14 +7,14 @@ function Wordmark({ light = false }: { light?: boolean }) {
   return (
     <div className="flex flex-col items-start leading-none">
       <span
-        className={`wordmark text-[1.15rem] md:text-[1.3rem] ${light ? "text-primary-foreground" : "text-foreground"}`}
+        className={`wordmark text-[1.2rem] md:text-[1.35rem] ${light ? "text-primary-foreground" : "text-foreground"}`}
       >
         Oriana
       </span>
       <span
-        className={`eyebrow mt-1 text-[0.5rem] tracking-[0.3em] ${light ? "text-primary-foreground/60" : "text-muted-foreground"}`}
+        className={`wordmark mt-1 text-[0.58rem] tracking-[0.58em] ${light ? "text-primary-foreground/60" : "text-muted-foreground"}`}
       >
-        Private Lash Studio
+        Studio
       </span>
     </div>
   );
@@ -128,19 +128,24 @@ export function Footer() {
           <div>
             <Wordmark light />
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-primary-foreground/70">
-              A private, one-client-at-a-time lash studio in Singapore.
+              A private, one-client-at-a-time beauty studio in Singapore.
+              Beauty, for absolutely anyone.
               <br />
               <em className="font-display italic">Noticed, not announced.</em>
             </p>
           </div>
           <div>
-            <p className="eyebrow text-primary-foreground/50">The Menu</p>
+            <p className="eyebrow text-primary-foreground/50">The Lash Line</p>
             <ul className="mt-5 space-y-3 text-sm text-primary-foreground/80">
               <li>First Light — the signature set</li>
               <li>Full Gold — the volume set</li>
               <li>The Lift — lash lift &amp; tint</li>
               <li>The Return — the infill</li>
             </ul>
+            <p className="mt-5 text-xs italic leading-relaxed text-primary-foreground/45">
+              Today, the lash line. The house will grow — quietly, one craft at
+              a time.
+            </p>
           </div>
           <div>
             <p className="eyebrow text-primary-foreground/50">Visit</p>

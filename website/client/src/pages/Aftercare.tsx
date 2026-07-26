@@ -64,8 +64,8 @@ export default function Aftercare() {
       </section>
 
       {/* What to avoid + the first 24 hours */}
-      <section className="border-y border-border bg-[var(--sand)]/40">
-        <div className="container grid gap-12 py-24 md:grid-cols-12 md:py-32">
+      <section className="grad-veil grain relative border-y border-border">
+        <div className="container relative z-10 grid gap-12 py-24 md:grid-cols-12 md:py-32">
           <div className="md:col-span-6">
             <p className="eyebrow rise text-muted-foreground">
               The first 24 hours

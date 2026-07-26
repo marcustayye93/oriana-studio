@@ -20,6 +20,10 @@ const FAQS = [
     a: "Say exactly that in your message. Most first-timers begin with First Light or, if extension-hesitant, The Lift — the consultation will settle it honestly.",
   },
   {
+    q: "Do you work on men?",
+    a: "Absolutely anyone — that is the whole door policy. Men most often book The Lift or a barely-there First Light; the mapping is done to your face, not to a gender.",
+  },
+  {
     q: "What if I'm allergic or sensitive?",
     a: "Tell us before your hour. A patch test can be arranged 48 hours ahead, and sensitive-eye adhesive is stocked as standard.",
   },

@@ -1,8 +1,8 @@
-# Oriana — Private Lash Studio
+# Oriana Studio — Private Beauty Studio
 
 > *Light, worn quietly.*
 
-The complete brand and website package for **Oriana**, a private, one-client-at-a-time home lash studio in Singapore. Built from the ground up: strategy, naming, identity, voice, guidelines, visual assets, and a five-page brand website.
+The complete brand and website package for **Oriana Studio**, a private, one-client-at-a-time beauty studio in Singapore — beginning with the lash line, built to grow into a quiet beauty house. Built from the ground up: strategy, naming, identity, voice, guidelines, visual assets, and a five-page brand website.
 
 ## Repository structure
 
@@ -15,7 +15,7 @@ The complete brand and website package for **Oriana**, a private, one-client-at-
 
 ## The brand in one paragraph
 
-Oriana (from Latin roots meaning *the rising golden light*) is a golden-hour world for natural-first lash artistry: not too much, not too little, just right. The voice is quiet, warm, and dry-witted; the palette is ivory, umber, honey-gold, with a muted sage accent; the type system pairs Cormorant Garamond with Inter and Petit Formal Script. Resident greeter: Wubbles the Cavapoo.
+Oriana Studio (from Latin roots meaning *the rising golden light*) is a golden-hour world for natural-first beauty artistry: not too much, not too little, just right — for absolutely anyone. Version 2.0 of the identity adds the gradient-grain palette (peach, pink, gold, eucalyptus green, and hazy blue, always textured with grain), a thin Cormorant Garamond Light display, the Italiana ORIANA / STUDIO lockup, and imperfection-forward inclusive photography (freckles kept, men and women both). The voice stays quiet, warm, and dry-witted. Resident greeter: Wubbles the Cavapoo.
 
 ## Running the website locally
 

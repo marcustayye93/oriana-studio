@@ -30,7 +30,7 @@ export default function Studio() {
           <div className="rise md:col-span-7">
             <div className="aspect-[4/3] w-full">
               <img
-                src={IMG.studio}
+                src={IMG.studioLight}
                 alt="The lash room — linen bed, warm wood, window light"
                 className="h-full w-full object-cover"
               />
@@ -99,6 +99,9 @@ export default function Studio() {
             </div>
             <p className="rise mt-8 text-xs uppercase tracking-[0.2em] text-[var(--gold)]">
               Certified &amp; insured · Korean natural-lash trained · Singapore
+            </p>
+            <p className="hand rise mt-6 text-lg text-primary-foreground/60">
+              today, the lash line. the house will grow — quietly
             </p>
           </div>
         </div>

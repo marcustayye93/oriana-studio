@@ -1,9 +1,8 @@
 /*
-  ORIANA — Home, round 3. Visual-first (D&AD/Awwwards mode):
-  full-bleed imagery, mega type over image, handwritten annotations (Chesa's voice),
-  marquee of her own words, 5–8 word statements. Words are punctuation, images narrate.
-  Round 3: Petit Formal Script for .hand (size down slightly, it's denser), sage accent
-  (--sage) to cut brown monotony, wittier/classier copy.
+  ORIANA STUDIO — Home, round 4 (v2.0 gradient-grain identity).
+  Macro freckled-eye hero (imperfection-forward), grain overlay on gradients,
+  Cormorant Garamond 300 display, inclusive "for absolutely anyone" section with
+  a male client portrait, marquee kept, Wubbles kept. Gradients never behind body copy.
 */
 import { Link } from "wouter";
 import { useReveal } from "@/hooks/useReveal";
@@ -15,6 +14,7 @@ const MARQUEE = [
   "just right",
   "what lashes do to me is light",
   "it feels natural",
+  "for absolutely anyone",
 ];
 
 export default function Home() {
@@ -25,14 +25,14 @@ export default function Home() {
       {/* ——— Hero: full-bleed image, mega type over it ——— */}
       <section className="relative min-h-[100svh] overflow-hidden">
         <img
-          src={IMG.eyes}
-          alt="Golden-hour portrait — eyes closed, lashes catching the light"
-          className="kenburns absolute inset-0 h-full w-full object-cover object-[center_30%]"
+          src={IMG.macroEyeF}
+          alt="Macro portrait — a freckled eye with fine natural lash extensions catching golden light"
+          className="kenburns absolute inset-0 h-full w-full object-cover object-[center_35%]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.22_0.02_60)]/85 via-[oklch(0.22_0.02_60)]/25 to-transparent" />
         <div className="container relative flex min-h-[100svh] flex-col justify-end pb-20 pt-32 md:pb-28">
           <p className="eyebrow rise text-white/70">
-            A private lash studio · Singapore
+            A private beauty studio · Singapore
           </p>
           <h1 className="mega rise mt-6 max-w-5xl text-[17vw] text-white sm:text-[13vw] md:text-[9.5rem] lg:text-[11rem]">
             Light,
@@ -82,7 +82,7 @@ export default function Home() {
         <div className="md:col-span-7">
           <div className="rise relative aspect-[3/2] w-full overflow-hidden">
             <img
-              src={IMG.macro}
+              src={IMG.handsCraft}
               alt="Macro detail — a single lash extension being placed"
               className="h-full w-full object-cover"
             />
@@ -106,8 +106,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ——— For absolutely anyone: inclusive statement, gradient-grain panel ——— */}
+      <section className="grad-dawn grain relative overflow-hidden">
+        <div className="container relative z-10 grid items-center gap-10 py-24 md:grid-cols-12 md:py-32">
+          <div className="md:col-span-5">
+            <div className="rise grid grid-cols-2 gap-4">
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src={IMG.portraitF}
+                  alt="A client with a soft natural lash set, three-quarter portrait"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="mt-10 aspect-[3/4] overflow-hidden">
+                <img
+                  src={IMG.portraitM}
+                  alt="A male client after a lash lift, relaxed in studio light"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="md:col-span-6 md:col-start-7">
+            <p className="eyebrow rise text-[oklch(0.32_0.026_60)]/70">
+              The only door policy
+            </p>
+            <h2 className="mega rise mt-6 text-5xl text-[oklch(0.28_0.026_60)] md:text-7xl">
+              Beauty, for
+              <br />
+              <em className="italic">absolutely anyone.</em>
+            </h2>
+            <div className="rise mt-8 max-w-md bg-[oklch(0.966_0.018_88)]/85 p-6 backdrop-blur-sm">
+              <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
+                Women who want their morning back. Men who'd like their eyes
+                open in photos. Anyone in between, beyond, or undecided. The
+                chair doesn't ask; the mapping is simply done to your face.
+              </p>
+              <p className="hand mt-4 text-lg text-[var(--sage)]">
+                come as you are. that's the whole instruction
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ——— The menu: numbers + names, price only ——— */}
-      <section className="border-y border-border bg-[var(--sand)]/40">
+      <section className="border-b border-border bg-[var(--sand)]/40">
         <div className="container py-24 md:py-32">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <h2 className="mega rise text-5xl md:text-7xl">The menu</h2>
@@ -192,7 +236,7 @@ export default function Home() {
           <div className="rise md:col-span-8">
             <div className="relative aspect-[16/10] overflow-hidden">
               <img
-                src={IMG.studio}
+                src={IMG.studioLight}
                 alt="The Oriana studio — linen lash bed in warm window light"
                 className="h-full w-full object-cover"
               />
@@ -230,9 +274,9 @@ export default function Home() {
       {/* ——— Closing CTA ——— */}
       <section className="relative overflow-hidden border-t border-border">
         <img
-          src={IMG.reveal}
+          src={IMG.macroEyeM}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-[center_40%]"
         />
         <div className="absolute inset-0 bg-[oklch(0.22_0.02_60)]/70" />
         <div className="container relative py-28 text-center md:py-40">

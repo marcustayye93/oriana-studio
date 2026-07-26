@@ -37,6 +37,11 @@ export default function Services() {
             <p className="hand rise mt-6 text-2xl text-muted-foreground md:text-3xl">
               undecided? say so. the tea exists for exactly this
             </p>
+            <p className="rise mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
+              One lash line, four ways in — for women, for men, for absolutely
+              anyone. Every set starts with tea and a conversation, not a
+              catalogue.
+            </p>
           </div>
           <div className="hidden items-end justify-end md:col-span-5 md:flex">
             <div className="gold-rule rise w-24" />

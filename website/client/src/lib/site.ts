@@ -1,4 +1,4 @@
-/* ORIANA — shared site constants. Golden-hour editorial: quiet, literary, precise. */
+/* ORIANA STUDIO — shared site constants. v2.0 gradient-grain identity: quiet, literary, inclusive. */
 
 // NOTE FOR CHESA: replace with the real studio WhatsApp number (country code, no +, no spaces).
 export const WHATSAPP_NUMBER = "6580000000";
@@ -25,6 +25,15 @@ export const IMG = {
   drawing: "/manus-storage/iphone-hands-drawing_7dc84a76.jpg",
   eyes: "/manus-storage/iphone-hero-portrait_4ac055a8.jpg",
   stillLife: "/manus-storage/iphone-still-life_ad604089.jpg",
+  // Round-4 v2.0 assets — imperfection-forward, inclusive, gradient-grain
+  macroEyeF: "/manus-storage/oriana-v2-macro-eye-female_04cb66c1.png",
+  macroEyeM: "/manus-storage/oriana-v2-macro-eye-male_b1dc91a5.png",
+  gradHero: "/manus-storage/oriana-v2-gradient-hero_18f41c14.png",
+  gradSoft: "/manus-storage/oriana-v2-gradient-soft_c613524d.png",
+  handsCraft: "/manus-storage/oriana-v2-hands-craft_cf9b3dce.png",
+  portraitF: "/manus-storage/oriana-v2-portrait-female_f7b0fe36.png",
+  portraitM: "/manus-storage/oriana-v2-portrait-male_2872847a.png",
+  studioLight: "/manus-storage/oriana-v2-studio-light_6d0c9657.png",
 };
 
 /* Chesa's own words — the voice bank. Use verbatim or lightly shaped. */
@@ -37,6 +46,9 @@ export const VOICE = {
   room: "Quiet, calm, a little cheery. Never too much.",
   wubbles:
     "Wubbles, resident Cavapoo. Professional greeter, terrible receptionist.",
+  anyone: "Beauty, for absolutely anyone.",
+  house:
+    "Today, the lash line. The house will grow — quietly, one craft at a time.",
 } as const;
 
 export const SERVICES = [

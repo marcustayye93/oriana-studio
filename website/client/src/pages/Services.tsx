@@ -10,8 +10,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useReveal } from "@/hooks/useReveal";
-import { IMG, SERVICES, waLink } from "@/lib/site";
 import { Link } from "wouter";
+import { IMG, SERVICES } from "@/lib/site";
 
 const ANATOMY_LABELS: Record<string, string> = {
   applied: "What goes on",
@@ -35,11 +35,16 @@ export default function Services() {
               The menu
             </h1>
             <p className="hand rise mt-6 text-2xl text-muted-foreground md:text-3xl">
-              four services, priced plainly
+              opening rates — from S$60
             </p>
             <p className="rise mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Extensions, volume, a lift, and the infill. Undecided? Say so in
-              your message — the consultation settles it.
+              Extensions, volume, a lift, and the infill — at opening rates
+              while we're new. Undecided? Say so in your message — the
+              consultation settles it.
+            </p>
+            <p className="rise mt-4 text-xs tracking-wide text-muted-foreground/80">
+              Certified &amp; insured lash artist · one client at a time · by
+              appointment
             </p>
           </div>
           <div className="hidden items-end justify-end md:col-span-5 md:flex">
@@ -106,16 +111,12 @@ export default function Services() {
               <div className="flex flex-row flex-wrap items-center gap-6 md:col-span-2 md:flex-col md:items-end md:gap-2 md:text-right">
                 <p className="text-base font-medium tracking-wide">{s.price}</p>
                 <p className="text-xs text-muted-foreground">{s.duration}</p>
-                <a
-                  href={waLink(
-                    `Hello Oriana — I'd like to hold an hour for ${s.name}. My name is `,
-                  )}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href={`/book?service=${encodeURIComponent(s.name)}`}
                   className="btn-pill mt-0 bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)] md:mt-4"
                 >
                   Book this <span className="btn-arrow">→</span>
-                </a>
+                </Link>
               </div>
             </article>
           ))}

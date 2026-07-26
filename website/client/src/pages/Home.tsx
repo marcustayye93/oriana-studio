@@ -6,7 +6,7 @@
 */
 import { Link } from "wouter";
 import { useReveal } from "@/hooks/useReveal";
-import { IMG, LOCATION, SERVICES, VOICE, WA_DEFAULT } from "@/lib/site";
+import { IMG, LOCATION, SERVICES, VOICE } from "@/lib/site";
 
 const MARQUEE = [
   "not too much",
@@ -42,16 +42,28 @@ export default function Home() {
           <div className="rise mt-8 flex flex-wrap items-end justify-between gap-8">
             <p className="max-w-sm text-base leading-relaxed text-white/90 md:text-lg">
               Natural-first lash extensions and lifts. One client at a time, by
-              appointment, in Woodlands.
+              appointment, in Woodlands. Sets from S$60.
             </p>
-            <a
-              href={WA_DEFAULT}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-pill bg-white text-[oklch(0.24_0.02_60)] hover:bg-[oklch(0.92_0.03_85)]"
-            >
-              Hold your hour <span className="btn-arrow">→</span>
-            </a>
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href="#menu"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .getElementById("menu")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="btn-pill bg-white text-[oklch(0.24_0.02_60)] hover:bg-[oklch(0.92_0.03_85)]"
+              >
+                Explore our services <span className="btn-arrow">↓</span>
+              </a>
+              <Link
+                href="/book"
+                className="btn-pill-outline border-white/60 text-white hover:bg-white hover:text-[oklch(0.24_0.02_60)]"
+              >
+                Hold your hour <span className="btn-arrow">→</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -85,6 +97,7 @@ export default function Home() {
             <img
               src={IMG.handsCraft}
               alt="Macro detail — a single lash extension being placed"
+              loading="lazy"
               className="h-full w-full object-cover"
             />
             <p className="hand absolute bottom-4 right-5 rotate-[-2deg] text-lg text-white/95 drop-shadow-md md:text-xl">
@@ -116,6 +129,7 @@ export default function Home() {
                 <img
                   src={IMG.portraitF}
                   alt="A client with a soft natural lash set, three-quarter portrait"
+                  loading="lazy"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -123,6 +137,7 @@ export default function Home() {
                 <img
                   src={IMG.portraitM}
                   alt="A male client after a lash lift, relaxed in studio light"
+                  loading="lazy"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -151,25 +166,26 @@ export default function Home() {
       </section>
 
       {/* ——— The menu: numbers + names, price only ——— */}
-      <section className="border-b border-border bg-[var(--sand)]/40">
+      <section id="menu" className="scroll-mt-20 border-b border-border bg-[var(--sand)]/40">
         <div className="container py-24 md:py-32">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <h2 className="mega rise text-5xl md:text-7xl">The menu</h2>
             <p className="hand rise text-lg text-muted-foreground md:text-xl">
-              four services. that's all
+              opening rates — from S$60
             </p>
           </div>
           <ul className="mt-14 divide-y divide-border border-y border-border">
             {SERVICES.map((s, i) => (
               <li key={s.name} className="rise">
                 <Link
-                  href="/services"
+                  href={`/book?service=${encodeURIComponent(s.name)}`}
                   className="group flex items-center gap-5 py-6 transition-colors sm:gap-8"
                 >
                   <div className="h-20 w-24 shrink-0 overflow-hidden rounded-xl sm:h-24 sm:w-32">
                     <img
                       src={s.photo}
                       alt={s.photoAlt}
+                      loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
@@ -194,12 +210,18 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <Link
-            href="/services"
-            className="btn-pill-outline rise mt-10 text-[var(--sage)] hover:bg-[var(--sage)] hover:text-white"
-          >
-            See the full menu <span className="btn-arrow">→</span>
-          </Link>
+          <div className="rise mt-10 flex flex-wrap items-center gap-6">
+            <Link
+              href="/services"
+              className="btn-pill-outline text-[var(--sage)] hover:bg-[var(--sage)] hover:text-white"
+            >
+              See the full menu <span className="btn-arrow">→</span>
+            </Link>
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              Tap any set to book it · Certified &amp; insured lash artist ·
+              One client at a time
+            </p>
+          </div>
         </div>
       </section>
 
@@ -211,11 +233,13 @@ export default function Home() {
               <img
                 src={IMG.drawing}
                 alt="Chesa's hands drawing an eye study in pencil"
+                loading="lazy"
                 className="h-full w-full object-cover"
               />
               <img
                 src={IMG.sketch}
                 alt=""
+                loading="lazy"
                 className="absolute -bottom-10 -right-6 hidden w-40 rotate-3 border border-[var(--gold)]/40 bg-white shadow-lg md:block"
               />
             </div>
@@ -250,6 +274,7 @@ export default function Home() {
               <img
                 src={IMG.studioLight}
                 alt="The Oriana studio — linen lash bed in warm window light"
+                loading="lazy"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
@@ -263,6 +288,7 @@ export default function Home() {
               <img
                 src={IMG.wubbles}
                 alt="Wubbles the Cavapoo, resident greeter"
+                loading="lazy"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
@@ -288,6 +314,7 @@ export default function Home() {
         <img
           src={IMG.macroEyeM}
           alt=""
+          loading="lazy"
           className="absolute inset-0 h-full w-full object-cover object-[center_40%]"
         />
         <div className="absolute inset-0 bg-[oklch(0.22_0.02_60)]/70" />
@@ -298,14 +325,15 @@ export default function Home() {
           <p className="hand rise mt-6 text-lg text-white/85 md:text-xl">
             leave a little lighter
           </p>
-          <a
-            href={WA_DEFAULT}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/book"
             className="btn-pill rise mt-10 bg-white text-[oklch(0.24_0.02_60)] hover:bg-[oklch(0.92_0.03_85)]"
           >
-            Hold your hour on WhatsApp <span className="btn-arrow">→</span>
-          </a>
+            Hold your hour <span className="btn-arrow">→</span>
+          </Link>
+          <p className="rise mt-5 text-xs text-white/70">
+            Three taps on the next page — we reply on WhatsApp within the day.
+          </p>
         </div>
       </section>
     </div>

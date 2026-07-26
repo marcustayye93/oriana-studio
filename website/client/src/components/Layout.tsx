@@ -76,14 +76,12 @@ export function Header() {
               {l.label}
             </Link>
           ))}
-          <a
-            href={WA_DEFAULT}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/book"
             className={`btn-pill !px-6 !py-3 ${solid ? "bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)]" : "bg-white/95 text-[oklch(0.24_0.02_60)] hover:bg-white"}`}
           >
             Hold your hour <span className="btn-arrow">→</span>
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -114,17 +112,56 @@ export function Header() {
               {l.label}
             </Link>
           ))}
-          <a
-            href={WA_DEFAULT}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link href="/book" className="font-display text-2xl text-foreground">
+            Book
+          </Link>
+          <Link
+            href="/book"
             className="btn-pill mt-2 justify-center bg-primary text-primary-foreground"
           >
             Hold your hour <span className="btn-arrow">→</span>
-          </a>
+          </Link>
         </nav>
       )}
     </header>
+  );
+}
+
+/* Sticky mobile booking bar — appears after the visitor scrolls past the hero,
+   hidden on /book itself. The single most direct path to a booking on mobile. */
+export function MobileBookBar() {
+  const [location] = useLocation();
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShow(window.scrollY > 560);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  if (location === "/book") return null;
+
+  return (
+    <div
+      className={`fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur-sm transition-transform duration-300 md:hidden ${
+        show ? "translate-y-0" : "translate-y-full"
+      }`}
+    >
+      <div className="flex items-center justify-between gap-4">
+        <p className="text-xs leading-snug text-muted-foreground">
+          Sets from S$60
+          <br />
+          <span className="text-foreground">Reply within the day</span>
+        </p>
+        <Link
+          href="/book"
+          className="btn-pill shrink-0 bg-primary text-primary-foreground"
+        >
+          Hold your hour <span className="btn-arrow">→</span>
+        </Link>
+      </div>
+    </div>
   );
 }
 
@@ -174,7 +211,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://instagram.com"
+                  href="https://instagram.com/oriana.studio.sg"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="link-grow"
@@ -207,6 +244,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
+      <MobileBookBar />
     </div>
   );
 }

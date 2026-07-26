@@ -3,8 +3,9 @@
   her pencil origin in her own words, handwritten annotations, Wubbles by name.
   Round 3: Petit Formal Script .hand (smaller sizes), sage accent, witty/classy copy.
 */
+import { Link } from "wouter";
 import { useReveal } from "@/hooks/useReveal";
-import { IMG, LOCATION, VOICE, WA_DEFAULT, waLink } from "@/lib/site";
+import { IMG, LOCATION, VOICE } from "@/lib/site";
 
 export default function Studio() {
   const ref = useReveal();
@@ -32,6 +33,7 @@ export default function Studio() {
               <img
                 src={IMG.studioLight}
                 alt="The lash room — linen bed, warm wood, window light"
+                loading="lazy"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -41,6 +43,7 @@ export default function Studio() {
               <img
                 src={IMG.stillLife}
                 alt="Studio still life — tools, linen, and window light"
+                loading="lazy"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -59,6 +62,7 @@ export default function Studio() {
               <img
                 src={IMG.artist}
                 alt="Chesa, the artist behind Oriana, in the studio"
+                loading="lazy"
                 className="h-full w-full object-cover"
               />
               <img
@@ -124,22 +128,19 @@ export default function Studio() {
             <p className="hand rise mt-6 text-lg text-[var(--sage)] md:text-xl">
               the lash room stays dog-free, always
             </p>
-            <a
-              href={waLink(
-                "Hello Oriana — I'd like to hold an hour (and yes, I'd love to meet Wubbles). My name is ",
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/book"
               className="btn-pill-outline rise mt-8 text-[var(--sage)] hover:bg-[var(--sage)] hover:text-white"
             >
               Book a visit — Wubbles included <span className="btn-arrow">→</span>
-            </a>
+            </Link>
           </div>
           <div className="order-1 md:order-2 md:col-span-6 md:col-start-7">
             <div className="rise aspect-[4/5] w-full max-w-[520px] md:ml-auto">
               <img
                 src={IMG.wubbles}
                 alt="Wubbles the Cavapoo sitting in warm window light"
+                loading="lazy"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -174,14 +175,12 @@ export default function Studio() {
             ))}
           </div>
           <div className="rise mt-16 text-center">
-            <a
-              href={WA_DEFAULT}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/book"
               className="btn-pill bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)]"
             >
               Hold your hour <span className="btn-arrow">→</span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

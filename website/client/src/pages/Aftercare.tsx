@@ -3,8 +3,9 @@
   Editorial single-column measures, sand section alternation.
   Round 3: sage accents, Petit Formal Script sizing, witty-classy trims.
 */
+import { Link } from "wouter";
 import { useReveal } from "@/hooks/useReveal";
-import { IMG, waLink } from "@/lib/site";
+import { IMG } from "@/lib/site";
 
 export default function Aftercare() {
   const ref = useReveal();
@@ -30,6 +31,7 @@ export default function Aftercare() {
           <img
             src={IMG.macro}
             alt="What a kept set looks like — clean, brushed lash extensions up close"
+            loading="lazy"
             className="h-full w-full object-cover object-center"
           />
         </div>
@@ -105,6 +107,7 @@ export default function Aftercare() {
               <img
                 src={IMG.aftercare}
                 alt="The Keep the Light aftercare card"
+                loading="lazy"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -120,16 +123,12 @@ export default function Aftercare() {
               restored at infill pricing — most clients book before leaving
               the chair.
             </p>
-            <a
-              href={waLink(
-                "Hello Oriana — I'd like to book my Return. My name is ",
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/book?service=The%20Return"
               className="btn-pill rise mt-10 bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)]"
             >
               Book your Return <span className="btn-arrow">→</span>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,7 +1,7 @@
 /* ORIANA STUDIO — shared site constants. v2.0 gradient-grain identity: quiet, literary, inclusive. */
 
-// NOTE FOR CHESA: replace with the real studio WhatsApp number (country code, no +, no spaces).
-export const WHATSAPP_NUMBER = "6580000000";
+// Business WhatsApp — bookings are handled here (WhatsApp AI assisted).
+export const WHATSAPP_NUMBER = "6580252620";
 
 export const waLink = (message: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -9,6 +9,13 @@ export const waLink = (message: string) =>
 export const WA_DEFAULT = waLink(
   "Hello Oriana — I'd like to hold an hour. My name is ",
 );
+
+/* Per-service booking links — structured so the WhatsApp AI can parse
+   service, price, and intent from the first message. */
+export const waServiceLink = (serviceName: string, price: string) =>
+  waLink(
+    `Hello Oriana — I'd like to book ${serviceName} (${price}). My name is `,
+  );
 
 export const IMG = {
   hero: "/manus-storage/hero-golden-hour_09e1276e.jpg",
@@ -34,11 +41,11 @@ export const IMG = {
   portraitF: "/manus-storage/oriana-v2-portrait-female_f7b0fe36.png",
   portraitM: "/manus-storage/oriana-v2-portrait-male_2872847a.png",
   studioLight: "/manus-storage/oriana-v2-studio-light_6d0c9657.png",
-  // Round-6 service result photos — one per menu item
-  svcClassic: "/manus-storage/oriana-v2-service-classic_16012626.png",
-  svcVolume: "/manus-storage/oriana-v2-service-volume_29717c64.png",
-  svcLift: "/manus-storage/oriana-v2-service-lift_f2e9ddee.png",
-  svcInfill: "/manus-storage/oriana-v2-service-infill_1a8f150d.png",
+  // Round-7 authentic service result photos — real-client look, one per menu item
+  svcClassic: "/manus-storage/oriana-v3-service-classic_88c866d1.png",
+  svcVolume: "/manus-storage/oriana-v3-service-volume_c2a89060.png",
+  svcLift: "/manus-storage/oriana-v3-service-lift_9f33f050.png",
+  svcInfill: "/manus-storage/oriana-v3-service-infill_edbee0eb.png",
 };
 
 /* Location — Woodlands South. Short form for footers/cards, long form for directions. */
@@ -64,15 +71,16 @@ export const VOICE = {
     "Today, the lash line. The house will grow — quietly, one craft at a time.",
 } as const;
 
+/* Opening pricing — new-studio rates. Entry set starts at S$60; the ladder steps up from there. */
 export const SERVICES = [
   {
     name: "First Light",
     descriptor: "Classic extensions — one per natural lash",
     body: "Classic extensions, one per natural lash. A natural set mapped to your eye shape — fuller lash line, no makeup look. Best first set.",
     duration: "2 hrs",
-    price: "S$128",
-    note: "Includes consultation & mapping",
-    photo: "/manus-storage/oriana-v2-service-classic_16012626.png",
+    price: "S$60",
+    note: "Opening rate — includes consultation & mapping",
+    photo: "/manus-storage/oriana-v3-service-classic_88c866d1.png",
     photoAlt: "Result of First Light — a natural classic lash set, eyes open",
     anatomy: {
       applied:
@@ -92,9 +100,9 @@ export const SERVICES = [
     descriptor: "Volume — handmade fans, 3–5 per lash",
     body: "Volume extensions: handmade fans of 3–5 ultra-fine lashes per natural lash. Noticeably fuller and darker, still lightweight. For sparse lashes or more impact.",
     duration: "2.5 hrs",
-    price: "S$168",
-    note: "Recommended after a First Light consultation",
-    photo: "/manus-storage/oriana-v2-service-volume_29717c64.png",
+    price: "S$98",
+    note: "Opening rate — recommended after a First Light consultation",
+    photo: "/manus-storage/oriana-v3-service-volume_c2a89060.png",
     photoAlt: "Result of Full Gold — a fuller, darker volume lash set",
     anatomy: {
       applied:
@@ -114,9 +122,9 @@ export const SERVICES = [
     descriptor: "Lash lift & tint — no extensions",
     body: "Lash lift and tint. Your own lashes curled from the root and tinted dark — no extensions, no adhesive. Lasts 6–8 weeks, zero upkeep.",
     duration: "1 hr",
-    price: "S$88",
-    note: "Best first visit if you're unsure about extensions",
-    photo: "/manus-storage/oriana-v2-service-lift_f2e9ddee.png",
+    price: "S$68",
+    note: "Opening rate — best first visit if you're unsure about extensions",
+    photo: "/manus-storage/oriana-v3-service-lift_9f33f050.png",
     photoAlt: "Result of The Lift — natural lashes curled and tinted, no extensions",
     anatomy: {
       applied:
@@ -136,9 +144,9 @@ export const SERVICES = [
     descriptor: "Infill — refresh an existing set",
     body: "The infill. Outgrown extensions replaced, your set restored to day one. Book within three weeks of your last visit.",
     duration: "1.5 hrs",
-    price: "from S$78",
+    price: "from S$45",
     note: "Within 3 weeks of your last set",
-    photo: "/manus-storage/oriana-v2-service-infill_1a8f150d.png",
+    photo: "/manus-storage/oriana-v3-service-infill_edbee0eb.png",
     photoAlt: "Result of The Return — an infilled set restored to day one",
     anatomy: {
       applied:

@@ -3,8 +3,9 @@
   Editorial layout, FAQ as quiet accordion-free list.
   Round 3: sage accent for interactive/labels, Petit Formal Script sizing, witty-classy copy.
 */
+import { Link } from "wouter";
 import { useReveal } from "@/hooks/useReveal";
-import { IMG, LOCATION, waLink, WA_DEFAULT } from "@/lib/site";
+import { IMG, LOCATION, WA_DEFAULT } from "@/lib/site";
 
 const FAQS = [
   {
@@ -54,18 +55,26 @@ export default function Contact() {
               Booking happens on WhatsApp. Write with your name and what you
               have in mind — Chesa replies within the day.
             </p>
-            <a
-              href={WA_DEFAULT}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-pill rise mt-10 bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)]"
-            >
-              Message on WhatsApp <span className="btn-arrow">→</span>
-            </a>
+            <div className="rise mt-10 flex flex-wrap items-center gap-4">
+              <Link
+                href="/book"
+                className="btn-pill bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)]"
+              >
+                Hold your hour <span className="btn-arrow">→</span>
+              </Link>
+              <a
+                href={WA_DEFAULT}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-pill-outline text-[var(--sage)] hover:bg-[var(--sage)] hover:text-white"
+              >
+                Message on WhatsApp <span className="btn-arrow">→</span>
+              </a>
+            </div>
             <p className="rise mt-6 text-xs tracking-wide text-muted-foreground">
               Or follow the work first:{" "}
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/oriana.studio.sg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="link-grow text-[var(--sage)]"
@@ -80,6 +89,7 @@ export default function Contact() {
               <img
                 src={IMG.studioLight}
                 alt="The room your hour happens in — linen bed, warm window light"
+                loading="lazy"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -153,14 +163,12 @@ export default function Contact() {
         <p className="hand rise mx-auto max-w-xl text-xl leading-relaxed text-muted-foreground md:text-2xl">
           "your hour is held — see you (and maybe Wubbles) soon"
         </p>
-        <a
-          href={waLink("Hello Oriana — I'd like to hold an hour. My name is ")}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="/book"
           className="btn-pill rise mt-10 bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)]"
         >
           Hold your hour <span className="btn-arrow">→</span>
-        </a>
+        </Link>
       </section>
     </div>
   );

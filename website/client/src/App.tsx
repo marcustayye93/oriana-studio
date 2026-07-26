@@ -8,8 +8,9 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Studio from "./pages/Studio";
-import Aftercare from "./pages/Aftercare";
+import Aftercare from "@/pages/Aftercare";
 import Contact from "./pages/Contact";
+import Book from "./pages/Book";
 
 
 function Router() {
@@ -21,6 +22,7 @@ function Router() {
         <Route path={"/studio"} component={Studio} />
         <Route path={"/aftercare"} component={Aftercare} />
         <Route path={"/contact"} component={Contact} />
+        <Route path={"/book"} component={Book} />
         <Route path={"/404"} component={NotFound} />
         {/* Final fallback route */}
         <Route component={NotFound} />

@@ -35,12 +35,11 @@ export default function Services() {
               The menu
             </h1>
             <p className="hand rise mt-6 text-2xl text-muted-foreground md:text-3xl">
-              undecided? say so. the tea exists for exactly this
+              four services, priced plainly
             </p>
             <p className="rise mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
-              One lash line, four ways in — for women, for men, for absolutely
-              anyone. Every set starts with tea and a conversation, not a
-              catalogue.
+              Extensions, volume, a lift, and the infill. Undecided? Say so in
+              your message — the consultation settles it.
             </p>
           </div>
           <div className="hidden items-end justify-end md:col-span-5 md:flex">
@@ -136,24 +135,22 @@ export default function Services() {
               What you take home
             </h2>
             <p className="rise mt-6 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
-              Every first set leaves with the Keep the Light card. The Keepsake
-              Kit — cleanser, soft brush, S$38 — is for people who intend to
-              follow it.
+              Every first set includes the Keep the Light aftercare card. The
+              Keepsake Kit — lash cleanser and soft brush — is S$38.
             </p>
             <div className="rise mt-10 border-t border-border pt-8">
               <h3 className="eyebrow text-muted-foreground">Quiet policies</h3>
               <ul className="mt-5 max-w-md space-y-3 text-sm leading-relaxed text-muted-foreground">
                 <li>
-                  Your hour is held for you alone — please give 24 hours'
-                  notice to move it.
+                  24 hours' notice to reschedule, please.
                 </li>
                 <li>
-                  The Return window is three weeks; after that, a new set
-                  serves you better and we will say so honestly.
+                  Infills within three weeks of your last set; after that, a
+                  new set works better.
                 </li>
                 <li>
-                  Arrive with clean lashes if you can; if you cannot, the
-                  cleanse is part of the hour.
+                  Arrive with clean lashes if you can — if not, the cleanse is
+                  part of your hour.
                 </li>
               </ul>
             </div>

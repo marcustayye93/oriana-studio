@@ -19,7 +19,7 @@ export default function Aftercare() {
             Keep the Light
           </h1>
           <p className="hand rise mt-6 text-xl text-muted-foreground md:text-2xl">
-            two tiny habits, thirty seconds each. that's the whole syllabus
+            two habits, thirty seconds each
           </p>
         </div>
       </section>
@@ -74,9 +74,8 @@ export default function Aftercare() {
               Let the bond set
             </h2>
             <p className="rise mt-6 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
-              For the first day, keep the lash line dry: no steam rooms, hot
-              yoga, swimming, or long hot showers. After that, live normally —
-              a well-applied set is for wearing, not guarding.
+              Keep the lash line dry for the first 24 hours — no steam, hot
+              yoga, swimming, or long hot showers. After that, live normally.
             </p>
           </div>
           <div className="md:col-span-5 md:col-start-8">
@@ -109,11 +108,10 @@ export default function Aftercare() {
               Your window is three weeks
             </h2>
             <p className="rise mt-6 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
-              Lashes shed on their own calendar — around a quarter of your set
-              every three weeks, extensions or not. Within that window, the
-              Return restores first-day fullness at infill pricing. Most
-              clients book it before they leave the chair; the reminder comes
-              two days before, quietly.
+              You naturally shed about a quarter of your lashes every three
+              weeks. Book the Return within that window and your set is
+              restored at infill pricing — most clients book before leaving
+              the chair.
             </p>
             <a
               href={waLink(

@@ -54,8 +54,8 @@ export const VOICE = {
 export const SERVICES = [
   {
     name: "First Light",
-    descriptor: "The signature set",
-    body: "The set people assume is yours. Mapped to your lash line, applied one lash at a time, calibrated to the exact point where anyone who asks sounds paranoid.",
+    descriptor: "Classic extensions — one per natural lash",
+    body: "Classic extensions, one per natural lash. A natural set mapped to your eye shape — fuller lash line, no makeup look. Best first set.",
     duration: "2 hrs",
     price: "S$128",
     note: "Includes consultation & mapping",
@@ -74,8 +74,8 @@ export const SERVICES = [
   },
   {
     name: "Full Gold",
-    descriptor: "The volume set",
-    body: "Handmade volume fans for depth that still reads as light. Fuller, never heavier. Think golden hour, not spotlight.",
+    descriptor: "Volume — handmade fans, 3–5 per lash",
+    body: "Volume extensions: handmade fans of 3–5 ultra-fine lashes per natural lash. Noticeably fuller and darker, still lightweight. For sparse lashes or more impact.",
     duration: "2.5 hrs",
     price: "S$168",
     note: "Recommended after a First Light consultation",
@@ -94,11 +94,11 @@ export const SERVICES = [
   },
   {
     name: "The Lift",
-    descriptor: "Lash lift & tint",
-    body: "Your own lashes, redirected. Curved from the root, tinted dark, and left to get on with it for two months. Nothing added; everything argued upward.",
+    descriptor: "Lash lift & tint — no extensions",
+    body: "Lash lift and tint. Your own lashes curled from the root and tinted dark — no extensions, no adhesive. Lasts 6–8 weeks, zero upkeep.",
     duration: "1 hr",
     price: "S$88",
-    note: "Ideal first visit if you are extension-hesitant",
+    note: "Best first visit if you're unsure about extensions",
     anatomy: {
       applied:
         "A keratin lift — your natural lashes set over a silicone shield at the root — followed by a tint several shades deeper than your own.",
@@ -114,11 +114,11 @@ export const SERVICES = [
   },
   {
     name: "The Return",
-    descriptor: "The infill",
-    body: "Your set, restored to opening night. Book within three weeks and nobody — including you — will remember it ever faded.",
+    descriptor: "Infill — refresh an existing set",
+    body: "The infill. Outgrown extensions replaced, your set restored to day one. Book within three weeks of your last visit.",
     duration: "1.5 hrs",
     price: "from S$78",
-    note: "Book before you leave — your window is held",
+    note: "Within 3 weeks of your last set",
     anatomy: {
       applied:
         "Outgrown extensions removed, new ones placed on the lashes that have grown in since. Typically 40–60% of the set refreshed.",

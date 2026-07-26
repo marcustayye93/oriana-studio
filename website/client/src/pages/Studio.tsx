@@ -118,13 +118,11 @@ export default function Studio() {
               Meet <em className="italic text-[oklch(0.62_0.11_75)]">Wubbles.</em>
             </h2>
             <p className="rise mt-8 max-w-md text-base leading-relaxed text-muted-foreground">
-              Cavapoo. Head of first impressions; hopeless with the calendar.
-              He greets in the lounge if you like dogs, and is elsewhere
-              entirely if you don't — arranging that costs one sentence at
-              booking.
+              Cavapoo, head of first impressions. He greets in the lounge if
+              you like dogs — say the word at booking and he's elsewhere.
             </p>
             <p className="hand rise mt-6 text-lg text-[var(--sage)] md:text-xl">
-              the lash room stays dog-free. his opinion was not sought
+              the lash room stays dog-free, always
             </p>
             <a
               href={waLink(

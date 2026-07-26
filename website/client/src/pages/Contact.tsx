@@ -9,31 +9,31 @@ import { waLink, WA_DEFAULT } from "@/lib/site";
 const FAQS = [
   {
     q: "Where exactly is the studio?",
-    a: "In Serangoon, a short walk from the MRT. The full address and door directions are shared on WhatsApp once your appointment is held — a private studio keeps its address private.",
+    a: "Serangoon, a short walk from the MRT. The full address is shared on WhatsApp once your appointment is confirmed.",
   },
   {
     q: "How far ahead should I book?",
-    a: "Appointments open week by week and seats are few on purpose. A few days' notice usually finds you an hour; weekends prefer a week.",
+    a: "A few days for weekdays; about a week for weekends.",
   },
   {
     q: "I've never had extensions. Where do I start?",
-    a: "Say exactly that in your message. Most first-timers begin with First Light or, if extension-hesitant, The Lift — the consultation will settle it honestly.",
+    a: "Say that in your message. Most first-timers book First Light; if you're unsure about extensions, The Lift. The consultation settles it.",
   },
   {
     q: "Do you work on men?",
-    a: "Absolutely anyone — that is the whole door policy. Men most often book The Lift or a barely-there First Light; the mapping is done to your face, not to a gender.",
+    a: "Yes — absolutely anyone. Men most often book The Lift or a natural First Light.",
   },
   {
     q: "What if I'm allergic or sensitive?",
-    a: "Tell us before your hour. A patch test can be arranged 48 hours ahead, and sensitive-eye adhesive is stocked as standard.",
+    a: "Tell us before your hour. Patch tests are available 48 hours ahead; sensitive-eye adhesive is standard stock.",
   },
   {
     q: "Can I request a dog-free visit?",
-    a: "One sentence at booking and Wubbles (resident Cavapoo, chief greeter) is elsewhere for the afternoon. The lash room itself is dog-free for everyone, always — he has accepted this with grace.",
+    a: "Yes — mention it at booking and Wubbles stays elsewhere. The lash room itself is always dog-free.",
   },
   {
     q: "Do you take walk-ins?",
-    a: "No. One client at a time is the entire premise — every hour is an appointment, and that is what keeps the room quiet.",
+    a: "No — every hour is an appointment. One client at a time is the whole premise.",
   },
 ];
 
@@ -51,8 +51,8 @@ export default function Contact() {
               Hold your hour
             </h1>
             <p className="rise mt-8 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-              A conversation, not a form. Write with your name and what you
-              have in mind — Chesa replies herself, within the day.
+              Booking happens on WhatsApp. Write with your name and what you
+              have in mind — Chesa replies within the day.
             </p>
             <a
               href={WA_DEFAULT}
@@ -82,15 +82,15 @@ export default function Contact() {
                 {[
                   {
                     n: "I",
-                    d: "Write with your name, the set you're curious about (or 'not sure'), and two or three times that suit you.",
+                    d: "Send your name, the service (or 'not sure'), and two or three times that suit you.",
                   },
                   {
                     n: "II",
-                    d: "You'll receive a held hour, the address, and anything worth knowing before you come.",
+                    d: "You'll get a confirmed hour, the address, and anything worth knowing beforehand.",
                   },
                   {
                     n: "III",
-                    d: "Arrive as you are. Tea first, consultation second, the hour third.",
+                    d: "Arrive as you are. Tea, consultation, then your hour.",
                   },
                 ].map((s) => (
                   <li key={s.n} className="flex gap-5">

@@ -1,4 +1,4 @@
-/* ORIANA STUDIO layout — v2.0. Italiana wordmark lockup (ORIANA / STUDIO), quiet top bar, umber footer with inclusive tagline. */
+/* ORIANA STUDIO layout — v2.0. Italiana wordmark lockup (ORIANA / STUDIO). Header is white over the dark hero at top of page, switches to the solid bar once scrolling. Umber footer with inclusive tagline. */
 import { Link, useLocation } from "wouter";
 import { useEffect, useState } from "react";
 import { NAV_LINKS, WA_DEFAULT, IMG } from "@/lib/site";
@@ -37,10 +37,18 @@ export function Header() {
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, [location]);
 
+  // At the very top the header floats over the page hero, so all header
+  // elements render white. Once scrolled (or the mobile menu is open), the
+  // solid bar takes over and elements use the normal foreground colors.
+  // Only Home has a dark full-bleed hero; every other page opens on a light
+  // ground, so the header is solid there from the start.
+  const overHero = location === "/" && !scrolled && !open;
+  const solid = !overHero;
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled || open
+        solid
           ? "bg-background/95 backdrop-blur-sm border-b border-border"
           : "bg-transparent"
       }`}
@@ -51,9 +59,9 @@ export function Header() {
             <img
               src={IMG.glyph}
               alt=""
-              className="h-5 w-auto hidden sm:block"
+              className={`h-5 w-auto hidden sm:block transition-[filter,opacity] duration-300 ${solid ? "" : "brightness-0 invert opacity-90"}`}
             />
-            <Wordmark />
+            <Wordmark light={!solid} />
           </span>
         </Link>
 
@@ -62,7 +70,7 @@ export function Header() {
             <Link
               key={l.href}
               href={l.href}
-              className="link-grow text-sm tracking-wide text-foreground/80 hover:text-[var(--sage)]"
+              className={`link-grow text-sm tracking-wide transition-colors duration-300 ${solid ? "text-foreground/80 hover:text-[var(--sage)]" : "text-white/90 hover:text-white"}`}
               data-active={location === l.href}
             >
               {l.label}
@@ -72,7 +80,7 @@ export function Header() {
             href={WA_DEFAULT}
             target="_blank"
             rel="noopener noreferrer"
-            className="press bg-primary text-primary-foreground px-6 py-3 text-xs font-medium tracking-[0.14em] uppercase hover:bg-[oklch(0.26_0.024_60)] transition-colors"
+            className={`press px-6 py-3 text-xs font-medium tracking-[0.14em] uppercase transition-colors duration-300 ${solid ? "bg-primary text-primary-foreground hover:bg-[oklch(0.26_0.024_60)]" : "bg-white/95 text-[oklch(0.24_0.02_60)] hover:bg-white"}`}
           >
             Hold your hour
           </a>
@@ -84,13 +92,13 @@ export function Header() {
           onClick={() => setOpen(!open)}
         >
           <span
-            className={`block h-px w-6 bg-foreground transition-transform duration-200 ${open ? "translate-y-[6px] rotate-45" : ""}`}
+            className={`block h-px w-6 transition-[transform,background-color] duration-200 ${solid ? "bg-foreground" : "bg-white"} ${open ? "translate-y-[6px] rotate-45" : ""}`}
           />
           <span
-            className={`block h-px w-6 bg-foreground transition-opacity duration-200 ${open ? "opacity-0" : ""}`}
+            className={`block h-px w-6 transition-[opacity,background-color] duration-200 ${solid ? "bg-foreground" : "bg-white"} ${open ? "opacity-0" : ""}`}
           />
           <span
-            className={`block h-px w-6 bg-foreground transition-transform duration-200 ${open ? "-translate-y-[6px] -rotate-45" : ""}`}
+            className={`block h-px w-6 transition-[transform,background-color] duration-200 ${solid ? "bg-foreground" : "bg-white"} ${open ? "-translate-y-[6px] -rotate-45" : ""}`}
           />
         </button>
       </div>

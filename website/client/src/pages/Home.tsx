@@ -40,8 +40,9 @@ export default function Home() {
             quietly.
           </h1>
           <div className="rise mt-8 flex flex-wrap items-end justify-between gap-8">
-            <p className="hand max-w-sm text-xl leading-relaxed text-white/90 md:text-2xl">
-              "{VOICE.light}" — Chesa
+            <p className="max-w-sm text-base leading-relaxed text-white/90 md:text-lg">
+              Natural-first lash extensions and lifts. One client at a time, by
+              appointment, in Serangoon.
             </p>
             <a
               href={WA_DEFAULT}
@@ -100,8 +101,8 @@ export default function Home() {
             <em className="italic text-[oklch(0.62_0.11_75)]">Just right.</em>
           </h2>
           <p className="rise mt-8 max-w-sm text-base leading-relaxed text-muted-foreground">
-            Sets mapped to your eye, not a catalogue. The compliment arrives;
-            the question never does.
+            Every set is mapped to your eye shape and applied one lash at a
+            time. The result reads as yours, not as extensions.
           </p>
         </div>
       </section>
@@ -138,12 +139,11 @@ export default function Home() {
             </h2>
             <div className="rise mt-8 max-w-md bg-[oklch(0.966_0.018_88)]/85 p-6 backdrop-blur-sm">
               <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                Women who want their morning back. Men who'd like their eyes
-                open in photos. Anyone in between, beyond, or undecided. The
-                chair doesn't ask; the mapping is simply done to your face.
+                Women, men, anyone. The mapping is done to your face — nothing
+                else about you matters in the chair.
               </p>
               <p className="hand mt-4 text-lg text-[var(--sage)]">
-                come as you are. that's the whole instruction
+                come as you are
               </p>
             </div>
           </div>
@@ -156,7 +156,7 @@ export default function Home() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <h2 className="mega rise text-5xl md:text-7xl">The menu</h2>
             <p className="hand rise text-lg text-muted-foreground md:text-xl">
-              start anywhere. we'll talk first
+              four services. that's all
             </p>
           </div>
           <ul className="mt-14 divide-y divide-border border-y border-border">
@@ -186,7 +186,7 @@ export default function Home() {
             href="/services"
             className="link-grow rise mt-10 inline-block text-sm tracking-wide text-[var(--sage)]"
           >
-            Full menu — including what's actually in it
+            Full menu — details, materials, durations
           </Link>
         </div>
       </section>
@@ -265,9 +265,8 @@ export default function Home() {
           </div>
         </div>
         <p className="rise mx-auto mt-12 max-w-md text-center text-sm leading-relaxed text-muted-foreground">
-          Quiet, calm, a little cheery — never too much. Tea first. Most
-          clients fall asleep; we take it as a review. Wubbles waits in the
-          lounge, or elsewhere entirely if you ask.
+          A private home studio: tea first, then your hour. Most clients fall
+          asleep. Wubbles stays in the lounge — or elsewhere, if you ask.
         </p>
       </section>
 

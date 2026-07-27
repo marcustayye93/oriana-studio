@@ -41,11 +41,11 @@ export const IMG = {
   portraitF: "/manus-storage/oriana-v2-portrait-female_f7b0fe36.png",
   portraitM: "/manus-storage/oriana-v2-portrait-male_2872847a.png",
   studioLight: "/manus-storage/oriana-v2-studio-light_6d0c9657.png",
-  // Round-7 authentic service result photos — real-client look, one per menu item
-  svcClassic: "/manus-storage/oriana-v3-service-classic_88c866d1.png",
-  svcVolume: "/manus-storage/oriana-v3-service-volume_c2a89060.png",
-  svcLift: "/manus-storage/oriana-v3-service-lift_9f33f050.png",
-  svcInfill: "/manus-storage/oriana-v3-service-infill_edbee0eb.png",
+  // Round-9 v4 editorial service photos — stylized campaign-grade, one per menu item
+  svcClassic: "/manus-storage/oriana-v4-service-classic_191aac08.png",
+  svcVolume: "/manus-storage/oriana-v4-service-volume_641f5d04.png",
+  svcLift: "/manus-storage/oriana-v4-service-lift_65f5cb1a.png",
+  svcInfill: "/manus-storage/oriana-v4-service-infill_e6b2bfc4.png",
 };
 
 /* Location — Woodlands South. Short form for footers/cards, long form for directions. */
@@ -80,7 +80,7 @@ export const SERVICES = [
     duration: "2 hrs",
     price: "S$60",
     note: "Opening rate — includes consultation & mapping",
-    photo: "/manus-storage/oriana-v3-service-classic_88c866d1.png",
+    photo: "/manus-storage/oriana-v4-service-classic_191aac08.png",
     photoAlt: "Result of First Light — a natural classic lash set, eyes open",
     anatomy: {
       applied:
@@ -102,7 +102,7 @@ export const SERVICES = [
     duration: "2.5 hrs",
     price: "S$98",
     note: "Opening rate — recommended after a First Light consultation",
-    photo: "/manus-storage/oriana-v3-service-volume_c2a89060.png",
+    photo: "/manus-storage/oriana-v4-service-volume_641f5d04.png",
     photoAlt: "Result of Full Gold — a fuller, darker volume lash set",
     anatomy: {
       applied:
@@ -124,7 +124,7 @@ export const SERVICES = [
     duration: "1 hr",
     price: "S$68",
     note: "Opening rate — best first visit if you're unsure about extensions",
-    photo: "/manus-storage/oriana-v3-service-lift_9f33f050.png",
+    photo: "/manus-storage/oriana-v4-service-lift_65f5cb1a.png",
     photoAlt: "Result of The Lift — natural lashes curled and tinted, no extensions",
     anatomy: {
       applied:
@@ -146,7 +146,7 @@ export const SERVICES = [
     duration: "1.5 hrs",
     price: "from S$45",
     note: "Within 3 weeks of your last set",
-    photo: "/manus-storage/oriana-v3-service-infill_edbee0eb.png",
+    photo: "/manus-storage/oriana-v4-service-infill_e6b2bfc4.png",
     photoAlt: "Result of The Return — an infilled set restored to day one",
     anatomy: {
       applied:
